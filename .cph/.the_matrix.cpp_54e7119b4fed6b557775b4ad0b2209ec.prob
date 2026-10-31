@@ -1,0 +1,1 @@
+{"name":"Local: the_matrix","url":"c:\\Coding\\problem\\the_matrix.cpp","tests":[{"id":1793277667764,"input":"4\n2 3\n13 9 24\n11 20 27\n3 3\n5 5 5\n5 5 5\n5 5 5\n1 4\n1 2 3 4\n4 3\n0 0 0\n0 0 0\n0 0 0\n0 0 0","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Coding\\problem\\the_matrix.cpp","group":"local","local":true}

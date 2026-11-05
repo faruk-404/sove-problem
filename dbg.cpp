@@ -23,8 +23,19 @@ const int N=3e5+5;
 void solve(){
     int n, m;
     cin >> n >> m;
+    int dp[3][2][4];
+    // for(auto)
     vector<vector<pair<int,int>>> a(n, vector<pair<int,int>>(m, make_pair(0,3)));
-    dbg_grid(a);
+
+    map<int, int> mp;
+    for (int i = 0; i < n;i++){
+        int c;
+        cin >> c;
+        mp[c] = c;
+    }
+    dbg_grid(mp);
+
+    dbg(mp);
 }
 int main() {
     ios::sync_with_stdio(false);

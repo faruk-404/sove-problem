@@ -52,7 +52,7 @@ void solve() {
     }
     cout << abs(sum - (accumulate(all(a),0)-s) )<< nl;
     sum = accumulate(all(a), 0);
-    s = sum / 2;
+    s = sum / 2; 
     for (int i = 0; i < n; i++) {
         if (sum > s) {
             sum -= a[i];

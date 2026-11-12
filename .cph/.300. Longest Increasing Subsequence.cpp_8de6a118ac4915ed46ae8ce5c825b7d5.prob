@@ -1,0 +1,1 @@
+{"name":"Local: 300","url":"c:\\Coding\\problem\\300. Longest Increasing Subsequence.cpp","tests":[{"id":1794485604397,"input":"8\n10 9 2 5 3 7 101 18","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Coding\\problem\\300. Longest Increasing Subsequence.cpp","group":"local","local":true}

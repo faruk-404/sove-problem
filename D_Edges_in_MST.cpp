@@ -1,0 +1,85 @@
+#include <bits/stdc++.h>
+using namespace std;
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define dbg(...)
+#define dbg_arr(...)
+#define dbg_range(...)
+#define dbg_grid(...)
+#define dbg_time(...)
+#endif
+
+#define nl '\n'
+#define nf cout << '\n'
+#define ll long long
+#define cy cout << "YES\n"
+#define cn cout << "NO\n"
+#define all(v) v.begin(), v.end()
+const int N = 3e5 + 5;
+struct DSU{
+    int c;
+    vector<int> par,rnk,siz;
+    DSU(int n):par(n+1),rnk(n+1),siz(n+1,1){
+        c=n;
+        for(int i=1;i<=n;i++) par[i]=i;
+    }
+    int find(int i){
+        if(i==par[i])return i;
+        return par[i]=find(par[i]);
+    }
+
+    bool same(int u,int v){
+        return find(u)==find(v);
+    }
+    int getsize(int u){
+        return siz[find(u)];
+    }
+    int cnt(){
+        return c;
+    }
+    void merge(int u,int v){
+        u=find(u),v=find(v);
+        if(u==v)return;
+        else c--;
+        if(rnk[u]>rnk[v])swap(u,v);
+        else if(rnk[u]==rnk[v]) rnk[v]++;
+        par[u]=v;
+        siz[v]+=siz[u];
+    }
+};
+void solve() {
+    int n, m;
+    cin >> n >> m;
+    vector<array<int, 4>> a(m);
+    vector<string> ans(m + 1);
+    for (int i = 0; i < m; i++) {
+        cin >> a[i][1] >> a[i][2] >> a[i][0];
+        a[i][3] = i + 1;
+    }
+    vector<array<int, 3>> aa[m];
+    sort(all(a));
+    for(auto i:a){
+        aa[i[0]].push_back({i[1], i[2], i[3]});
+    }
+    vector<array<ll,3>> edges;           // {w,u,v}  (w big -> ll)
+    // edges.push_back({w,u,v});
+    sort(all(edges));
+    DSU d(n);
+    ll cost=0; int used=0;
+    for(auto [w,u,v]:edges){
+        if(d.same(u,v)) continue;
+        d.merge(u,v);
+        cost+=w; used++;
+    }
+    // MST exists iff used==n-1
+    dbg_arr(aa,3);
+}
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t = 1;
+    // cin>>t;
+    while (t--) solve();
+    return 0;
+}

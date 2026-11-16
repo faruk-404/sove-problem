@@ -25,6 +25,7 @@ void solve(){
     string s;
     cin >> s;
     cout << s << nl;
+    dbg(s);
 }
 int main() {
     ios::sync_with_stdio(false);

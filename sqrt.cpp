@@ -20,22 +20,15 @@ const int N = 3e5 + 5;
 
 void solve() {
     double n;
+    printf("Please enter any number: \n");
     cin >> n;
     if (n < 0) {
         cout << "Accept positive number only!\n";
         return;
     }
-    auto ok = [&](double mid) {
-        return (mid * mid <= n);
-    };
-    double l = 0,
-           r = 1e9;
-    for (ll it = 0; it < 100; it++) {
-        double mid = (l + r) / 2;
-        if (ok(mid)) l = mid;
-        else r = mid;
-    }
-    cout << "Square root of " << setprecision(6) << fixed << n << " is " << l << nl;
+    cout << fixed << setprecision(6);
+    cout << "Square root of " << n << " is " << sqrt(n) << "\n";
+    return;
 }
 int main() {
     ios::sync_with_stdio(false);

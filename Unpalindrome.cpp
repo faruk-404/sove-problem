@@ -31,7 +31,8 @@ void solve() {
     reverse(all(b));
     if (a == b) {
         cn;
-        return;
+        return; 
+        //int k;cin>>k;
     }
     cout << "YES ";
     for (int i = 1; i <= n; i++) {
